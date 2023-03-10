@@ -1,0 +1,72 @@
+{
+  "buckets": [
+    {
+      "id": 1,
+      "name": "Educational"
+    },
+    {
+      "id": 2,
+      "name": "popular"
+    },
+    {
+      "name": "Latest",
+      "id": 3
+    }
+  ],
+  "videos": [
+    {
+      "bucketId": 1,
+      "id": 1,
+      "name": "React-course",
+      "link": "https://www.youtube.com/watch?v=59z1_3-vTOk"
+    },
+    {
+      "bucketId": 2,
+      "id": 1,
+      "name": "shark tank",
+      "link": "https://www.youtube.com/watch?v=RiMXoku1TI0"
+    },
+    {
+      "bucketId": 2,
+      "id": 2,
+      "name": "Football",
+      "link": "https://www.youtube.com/watch?v=fCbmSH-YxW8"
+    },
+    {
+      "bucketId": 1,
+      "name": "angular",
+      "link": "adfwffw3fr",
+      "id": 3
+    },
+    {
+      "bucketId": 1,
+      "name": "next",
+      "link": "jhwcbej",
+      "id": 4
+    },
+    {
+      "bucketId": 1,
+      "name": "34r",
+      "link": "rfrf",
+      "id": 5
+    },
+    {
+      "bucketId": 3,
+      "name": "frfr",
+      "link": "vervr",
+      "id": 6
+    },
+    {
+      "bucketId": 2,
+      "name": "frv4",
+      "link": "efef",
+      "id": 7
+    },
+    {
+      "bucketId": 3,
+      "name": "manik",
+      "link": "ggvd",
+      "id": 8
+    }
+  ]
+}
