@@ -1,36 +1,22 @@
-import React from 'react'
-import Content from './Content'
-import Sidebar from './Sidebar'
-import { useState,useEffect } from 'react'
+import React from "react";
+import Content from "./Content";
+import Sidebar from "./Sidebar";
+import { useState } from "react";
 
 const Body = () => {
-    const[bucket,setBucket] = useState(1)
-    const[bucketData,setBucketdata]=useState([])
+  const [bucketId, setBucketId] = useState(1);
+
+  const handleBucket = (id) => {
+    setBucketId(id);
+  };
 
 
-    useEffect(() => {
-        const getData = async()=>{
-            const json = await fetch(`http://localhost:8000/videos`).then(res=>res.json())
-
-            const videodata = json.filter(video=>video.bucketId === bucket)
-            console.log(videodata);
-            setBucketdata(videodata)
-
-        }
-        getData()    
-      
-    }, [bucket])
-
-    const handleBucket = (id)=>{
-        setBucket(id)
-    }
-    
   return (
-    <div className='max-w-full h-[765px] flex'>
-        <Sidebar handleBucket={handleBucket}/>
-        <Content bucket={bucket} bucketData={bucketData}/>
+    <div className="max-w-full h-[765px] flex">
+      <Sidebar handleBucket={handleBucket} />
+      <Content BucketId={bucketId} />
     </div>
-  )
-}
+  );
+};
 
-export default Body
+export default Body;

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { AddItem } from '../utilities';
+import { AddVideo } from '../utilities';
 
 const CardModal = ({toggleModal,bucketId}) => {
     const [text,setText] = useState('')
@@ -32,7 +32,7 @@ const CardModal = ({toggleModal,bucketId}) => {
             onClick={() => {
               text === "" || url === ''
                 ? alert("please fill the details")
-                :  AddItem(text,url,bucketId) & toggleModal();
+                :  AddVideo(text,url,bucketId) & toggleModal();
             }}
           >
             Done

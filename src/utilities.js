@@ -11,7 +11,7 @@ export const addBucket = (name) => {
       body: JSON.stringify(newBucket),
     });
   };
-  export const AddItem = (name,url,bucketId)=>{
+  export const AddVideo = (name,url,bucketId)=>{
     console.log(bucketId);
     let newCard = {
       "bucketId":bucketId,
@@ -29,4 +29,25 @@ export const addBucket = (name) => {
     })
 
     console.log('item added');
+  }
+
+
+
+  export const deleteMultipleVideos = (videoIds)=>{
+    console.log('initiated');
+// find a better approach
+    videoIds.map(id=>{
+      fetch(`http://localhost:8000/videos/${id}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: "application/json",
+    }
+
+  })
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error(error))
+    })
+    return true
   }

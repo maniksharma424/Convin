@@ -13,7 +13,7 @@ const Sidebar = ({ handleBucket }) => {
       const json = await fetch("http://localhost:8000/buckets").then((res) =>
         res.json()
       );
-      console.log(json);
+
       setBuckets(json);
     };
     getData();
@@ -23,7 +23,9 @@ const Sidebar = ({ handleBucket }) => {
       <p>Buckets</p>
       {buckets.map((bucket) => (
         <button
-          onClick={() => handleBucket(bucket.id)}
+          onClick={() => {
+            handleBucket(bucket.id);
+          }}
           key={bucket.id}
           className="sm:w-11/12 sm:py-1 border-[1px]"
         >
