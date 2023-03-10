@@ -2,29 +2,37 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { setItem } from "../bucketSlice";
+import { show } from "../modalSlice";
 import BucketModal from "./BucketModal";
 
-const Sidebar = ({ handleBucket }) => {
+const Sidebar = () => {
   const [buckets, setBuckets] = useState([]);
-  const [showModal, setShowModal] = useState(false);
+
+const {showBucketModal} = useSelector(store=>store?.modal)
+
+const dispatch = useDispatch()
+
 
   useEffect(() => {
     const getData = async () => {
       const json = await fetch("http://localhost:8000/buckets").then((res) =>
         res.json()
       );
-
       setBuckets(json);
     };
     getData();
-  }, [showModal]);
+  }, [showBucketModal]);
+
+  
   return (
     <div className="w-1/6 border-[1px] h-full flex flex-col justify-start items-center">
       <p>Buckets</p>
       {buckets.map((bucket) => (
         <button
           onClick={() => {
-            handleBucket(bucket.id);
+            dispatch(setItem(bucket?.id))
           }}
           key={bucket.id}
           className="sm:w-11/12 sm:py-1 border-[1px]"
@@ -34,13 +42,13 @@ const Sidebar = ({ handleBucket }) => {
       ))}
       <button
         onClick={() => {
-          setShowModal(true);
+          dispatch(show())
         }}
         className="sm:px-10 sm:py-1 border-[1px]"
       >
         +
       </button>
-      {showModal &&
+      {showBucketModal &&
         createPortal(
           <BucketModal
             toggleModal={() => {

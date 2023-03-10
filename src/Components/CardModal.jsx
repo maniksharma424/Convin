@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux';
+import { hideAddCardModal } from '../modalSlice';
 import { AddVideo } from '../utilities';
 
-const CardModal = ({toggleModal,bucketId}) => {
+const CardModal = ({bucketId}) => {
     const [text,setText] = useState('')
     const[url,setUrl] = useState('')
+    const dispatch = useDispatch()
     return (
         <div className="Card-modal bg-white w-1/3 h-1/3 border-[1px] absolute top-[200px] left-[400px] sm:p-4 flex flex-col justify-evenly ">
           <p>Add Video</p>
@@ -32,14 +35,14 @@ const CardModal = ({toggleModal,bucketId}) => {
             onClick={() => {
               text === "" || url === ''
                 ? alert("please fill the details")
-                :  AddVideo(text,url,bucketId) & toggleModal();
+                :  AddVideo(text,url,bucketId) & dispatch(hideAddCardModal())
             }}
           >
             Done
           </button>
           <button
             onClick={() => {
-              toggleModal();
+              dispatch(hideAddCardModal())
             }}
             className="w-11/12 py-1 border-[1px] bg-white text-black"
           >

@@ -1,8 +1,8 @@
-export const addBucket = (name) => {
+export const addBucket = async (name) => {
     let newBucket = {
       name: name
     };
-    fetch("http://localhost:8000/buckets", {
+   await fetch("http://localhost:8000/buckets", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -11,7 +11,7 @@ export const addBucket = (name) => {
       body: JSON.stringify(newBucket),
     });
   };
-  export const AddVideo = (name,url,bucketId)=>{
+  export const AddVideo = async (name,url,bucketId)=>{
     console.log(bucketId);
     let newCard = {
       "bucketId":bucketId,
@@ -19,7 +19,7 @@ export const addBucket = (name) => {
       "link":url
     }
 
-    fetch('http://localhost:8000/videos', {
+   await  fetch('http://localhost:8000/videos', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -28,26 +28,54 @@ export const addBucket = (name) => {
       body: JSON.stringify(newCard)
     })
 
-    console.log('item added');
   }
 
 
 
-  export const deleteMultipleVideos = (videoIds)=>{
-    console.log('initiated');
+  export const deleteMultipleVideos = async (videoIds)=>{
 // find a better approach
-    videoIds.map(id=>{
-      fetch(`http://localhost:8000/videos/${id}`, {
+   await videoIds.map(id=>{
+       fetch(`http://localhost:8000/videos/${id}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
       Accept: "application/json",
     }
 
-  })
-    .then(response => response.json())
-    .then(data => console.log(data))
-    .catch(error => console.error(error))
+  }).catch(error => console.error(error))
     })
     return true
   }
+export const deleteVideo = async (id)=>{
+
+ await fetch(`http://localhost:8000/videos/${id}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: "application/json",
+    }
+    })
+}
+
+
+export const editVideo = async (id,name,link,bucketId)=>{
+
+
+  let newVideo = {
+    "bucketId":bucketId,
+    "name":name,
+    "link":link,
+  }
+
+  await fetch(`http://localhost:8000/videos/${id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: "application/json",
+    },
+    body: JSON.stringify(newVideo)
+  })
+
+
+  console.log('edited video');
+}
