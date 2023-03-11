@@ -61,7 +61,7 @@ const Content = () => {
 
   useEffect(() => {
     const getBucketname = async () => {
-      const json = await fetch(`http://localhost:8000/buckets/${BucketId}`)
+      const json = await fetch(`http://localhost:5000/buckets/${BucketId}`)
         .then((res) => res.json())
         .then((res) => setBucketName(res.name));
     };

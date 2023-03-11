@@ -9,7 +9,7 @@ const MoveModal = () => {
 
 useEffect(()=>{
     const getData = async () => {
-        const json = await fetch(`http://localhost:8000/buckets`).then((res) =>
+        const json = await fetch(`http://localhost:5000/buckets`).then((res) =>
           res.json()
         );
   
