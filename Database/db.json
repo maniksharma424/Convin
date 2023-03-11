@@ -7,6 +7,10 @@
     {
       "name": "Songs",
       "id": 2
+    },
+    {
+      "name": "Latest songs",
+      "id": 3
     }
   ],
   "videos": [
@@ -15,24 +19,6 @@
       "name": "nextjs",
       "link": "https://www.youtube.com/watch?v=1WmNXEVia8I&t=332s",
       "id": 8
-    },
-    {
-      "bucketId": 1,
-      "name": "React -course",
-      "link": "https://www.youtube.com/watch?v=cd3P3yXyx30&t=19629s",
-      "id": 9
-    },
-    {
-      "bucketId": 2,
-      "name": "mark cuban",
-      "link": "https://www.youtube.com/watch?v=kbEOJLiIjUM",
-      "id": 10
-    },
-    {
-      "bucketId": 1,
-      "name": "Mongo Db",
-      "link": "https://www.youtube.com/watch?v=ofme2o29ngU",
-      "id": 11
     }
   ]
 }

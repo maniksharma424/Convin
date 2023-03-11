@@ -16,6 +16,8 @@ import {
 import VideoModal from "./VideoModal";
 import { showMoveModal } from "../modalSlice";
 import { setMoveVideoData } from "../bucketSlice";
+import { timeOptions } from "../constants";
+import { motion } from "framer-motion";
 
 const ItemCard = ({ item }) => {
   const [selected, setSelected] = useState(false);
@@ -43,21 +45,12 @@ const ItemCard = ({ item }) => {
         ></input>
       ) : null}
 
-      <div className="w-3/12 h-1/4 m-3 ">
+      <motion.div whileHover={{ scale: 1.1 }} className="w-3/12 sm:h-1/4 h-1/6 m-3 ">
         <div className="w-full h-5/6 sm:m-2  sm:p-2 border-[1px]  rounded-md bg-white flex flex-col justify-center items-center shadow-lg">
           <button
             onClick={() => {
               const now = new Date();
-              const options = {
-                year: "numeric",
-                month: "2-digit",
-                day: "2-digit",
-                hour: "2-digit",
-                minute: "2-digit",
-                second: "2-digit",
-                hour12: false,
-                timeZone: "UTC",
-              };
+              const options = timeOptions;
               const formattedDateTime = now.toLocaleString("en-US", options);
 
               dispatch(showPlayVideoModal());
@@ -75,38 +68,41 @@ const ItemCard = ({ item }) => {
           </button>
         </div>
         <div className="btns flex justify-between items-center w-full h-1/6">
-          <button
+          <motion.button
+            whileHover={{ scale: 1.1 }}
             onClick={() => {
               // deleteVideo(item.id)
               dispatch(setDeleteVideoId(item?.id));
               dispatch(showDeleteModal());
             }}
-            className="border-[1px] px-4   bg-white font-[100] rounded-md shadow-lg "
+            className="border-[1px] sm:px-4 sm:text-[15px] text-[6px] bg-white font-[100] rounded-md shadow-lg hover:bg-[#88669d] hover:text-white"
           >
             Delete
-          </button>
-          <button
+          </motion.button>
+          <motion.button
+            whileHover={{ scale: 1.1 }}
             onClick={() => {
               dispatch(showEditModal());
               dispatch(addEditItem(item?.id));
               dispatch(addEditItem(item?.bucketId));
             }}
-            className="border-[1px] px-4  bg-white font-[100] rounded-md  shadow-lg"
+            className="border-[1px] sm:px-4  bg-white font-[100] rounded-md  shadow-lg hover:bg-[#80669d] hover:text-white sm:text-[15px] text-[8px]"
           >
             Edit
-          </button>
+          </motion.button>
 
-          <button
+          <motion.button
+            whileHover={{ scale: 1.1 }}
             onClick={() => {
               dispatch(showMoveModal());
               dispatch(setMoveVideoData(item));
             }}
-            className="border-[1px] px-4 bg-white font-[100] rounded-md shadow-lg "
+            className="border-[1px] sm:px-4 bg-white font-[100] rounded-md shadow-lg hover:bg-[#80669d] hover:text-white sm:text-[15px] text-[8px]"
           >
             Move to
-          </button>
+          </motion.button>
         </div>
-      </div>
+      </motion.div>
       {playVideo && createPortal(<VideoModal src={VIDEO_URL} />, document.body)}
     </>
   );

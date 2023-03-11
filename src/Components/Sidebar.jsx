@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setItem } from "../bucketSlice";
 import { show } from "../modalSlice";
 import BucketModal from "./BucketModal";
+import { motion } from "framer-motion";
 
 const Sidebar = () => {
   const [buckets, setBuckets] = useState([]);
@@ -25,28 +26,31 @@ const Sidebar = () => {
   }, [showBucketModal]);
 
   return (
-    <div className="w-1/6 border-[1px] pb-[190px] h-fit flex flex-col justify-evenly items-center py-5 overflow-scroll rounded-3xl ">
-      <p className="text-[20px] mb-4 font-[700]">Buckets</p>
+    <motion.div
+    initial={{ y: "50%", opacity: 0, scale: 0.5 }}
+    animate={{ y: 0, opacity: 1, scale: 1 }}
+    className="w-1/6 border-[1px] pb-[190px] h-fit flex flex-col justify-evenly items-center py-5 overflow-scroll rounded-3xl ">
+      <p className="sm:text-[20px] text-[12px] mb-4 sm:font-[700] font-[400]">Buckets</p>
       {buckets.map((bucket) => (
-        // className={"sm:w-11/12 sm:py-1 border-[1px] mb-3 rounded-md" }
-
-        <button
+        <motion.button
+        whileHover={{scale:1.1}}
           onClick={() => {
             dispatch(setItem(bucket?.id));
           }}
           key={bucket.id}
-          className="sm:w-11/12 sm:py-1 border-[1px] mb-3 rounded-md bg-white hover:bg-[#ffbd03] hover:text-white"
+          className="w-11/12 sm:py-1 border-[1px] sm:mb-3 mb-2 rounded-md bg-white hover:bg-[#ffbd03] hover:text-white sm:text-[16px] text-[7px]"
           >
-          {bucket.name}</button>
+          {bucket.name}</motion.button>
       ))}
-      <button
+      <motion.button
+      whileHover={{scale:1.1}}
         onClick={() => {
           dispatch(show());
         }}
-        className="sm:w-11/12 sm:py-1 border-[1px] mb-3 rounded-md bg-white hover:bg-[#80669d] hover:text-white"
+        className="w-11/12 sm:py-1 border-[1px] mb-3 rounded-md bg-white hover:bg-[#80669d] hover:text-white"
       >
         +
-      </button>
+      </motion.button>
       {showBucketModal &&
         createPortal(
           <BucketModal
@@ -56,7 +60,7 @@ const Sidebar = () => {
           />,
           document.body
         )}
-    </div>
+    </motion.div>
   );
 };
 

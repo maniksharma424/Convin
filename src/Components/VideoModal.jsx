@@ -1,13 +1,17 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { hidePlayVideoModal } from "../modalSlice";
+import { motion } from "framer-motion";
 
 const VideoModal = ({ src }) => {
   const dispatch = useDispatch();
   return (
     <>
     
-      <div className="Card-modal bg-white w-2/3 h-2/3 absolute top-[100px] left-[250px]  flex flex-col items-end justify-evenly">
+      <motion.div
+  initial={{ y: "50%", opacity: 0, scale: 0.5 }}
+  animate={{ y: 0, opacity: 1, scale: 1 }}      
+      className="Card-modal bg-white sm:w-2/3 sm:h-2/3 absolute top-[100px] sm:left-[250px] left-[100px] w-2/3 h-1/3  flex flex-col items-end justify-evenly">
       
         <iframe
         className="w-full h-full rounded-lg"
@@ -23,11 +27,11 @@ const VideoModal = ({ src }) => {
           onClick={() => {
             dispatch(hidePlayVideoModal());
           }}
-          className="border-[1px] w-full mt-3  sm:text-[30px] px-2 rounded-md bg-white hover:bg-[#80669d] hover:text-white font-[100]"
+          className="border-[1px] w-full mt-3  sm:text-[30px] px-2 rounded-md text-white bg-[#80669d]  font-[100]"
         >
           Close
         </button>
-      </div>
+      </motion.div>
     </>
   );
 };

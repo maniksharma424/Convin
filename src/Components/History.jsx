@@ -1,11 +1,14 @@
 import React from "react";
 import { useSelector } from "react-redux";
-
+import { motion } from "framer-motion";
 const History = () => {
   const history = useSelector((store) => store?.history?.history);
   console.log(history);
   return (
-    <div className="history w-full h-[800px] flex justify-center items-center">
+    <motion.div
+     initial={{ y: "50%", opacity: 0, scale: 0.5 }}
+      animate={{ y: 0, opacity: 1, scale: 1 }}
+    className="history w-full h-[800px] flex justify-center items-center">
       <div className=" w-3/4 h-3/4 relative bottom-24 border-[1px] rounded-lg shadow-2xl flex flex-col items-center">
         <p className="text-[30px] font-[200]">History</p>
         <div className="w-full h-full border-[1px]  px-5 py-3 ">
@@ -25,7 +28,7 @@ const History = () => {
           })}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
