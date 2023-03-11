@@ -40,7 +40,7 @@ const Content = () => {
 
   useEffect(() => {
     const getBucketData = async () => {
-      const json = await fetch(`http://localhost:8000/videos`).then((res) =>
+      const json = await fetch(`http://localhost:5000/videos`).then((res) =>
         res.json()
       );
 
