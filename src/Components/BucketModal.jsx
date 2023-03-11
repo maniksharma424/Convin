@@ -12,7 +12,7 @@ const BucketModal = () => {
 
   useEffect(() => {
     inputRef.current.focus();
-  });
+  },[]);
 
   return (
     <motion.div

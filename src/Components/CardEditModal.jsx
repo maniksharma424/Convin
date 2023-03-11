@@ -24,7 +24,7 @@ const CardEditModal = () => {
 
   useEffect(() => {
     inputRef.current.focus();
-  });
+  },[]);
 
   return (
     <motion.div

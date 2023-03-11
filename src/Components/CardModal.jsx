@@ -13,7 +13,7 @@ const CardModal = ({ bucketId }) => {
 
   useEffect(() => {
     inputRef.current.focus();
-  });
+  },[]);
   return (
     <motion.div
       initial={{ y: "50%", opacity: 0, scale: 0.5 }}
