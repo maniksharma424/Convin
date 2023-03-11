@@ -14,13 +14,13 @@ const videoSlice =createSlice({
         removeItem:(state,action)=>{
             state.items = state.items.filter(item=>item!==action.payload)
         },
-        clearItems:(state,action)=>{
+        clearItems:(state)=>{
             state.items = []
         },
         addEditItem:(state,action)=>{
             state.editItems.push(action.payload)
         },
-        removeEditItem:(state,action)=>{
+        removeEditItem:(state)=>{
             state.editItems = []
         },
         setDeleteVideoId:(state,action)=>{

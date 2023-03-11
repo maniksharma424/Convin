@@ -2,7 +2,6 @@ import React from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { hideEditModal } from "../modalSlice";
-
 import { editVideo } from "../utilities";
 import { removeEditItem } from "../videoSlice";
 
@@ -22,8 +21,8 @@ const CardEditModal = ({ toggleModal }) => {
   const bucketId = I_D_S[1];
   
   return (
-    <div className="Card-modal bg-white w-1/3 h-1/3 border-[1px] absolute top-[200px] left-[400px] sm:p-4 flex flex-col justify-evenly ">
-      <p>Add Video</p>
+    <div className="Card-modal bg-gray-50 w-1/3 h-1/3 border-[1px] absolute top-[200px] left-[400px] sm:p-4 flex flex-col justify-evenly rounded-xl ">
+      <div className='w-11/12 flex justify-center'><p className='text-[25px] font-[400]'>Edit Video</p></div>
       <input
         value={text}
         placeholder="Edit Name.."
@@ -31,7 +30,7 @@ const CardEditModal = ({ toggleModal }) => {
           setText(e.target.value);
         }}
         type="text"
-        className="sm:w-11/12 h-1/5 border-[1px] px-2"
+        className="sm:w-11/12 sm:py-2 border-[1px] px-2 rounded-md"
       />
       <input
         value={url}
@@ -40,10 +39,10 @@ const CardEditModal = ({ toggleModal }) => {
           setUrl(e.target.value);
         }}
         type="text"
-        className="sm:w-11/12 h-1/5 border-[1px] px-2"
+        className="sm:w-11/12 sm:py-2 border-[1px] px-2 rounded-md"
       />
       <button
-        className="w-11/12 py-1 border-[1px] bg-black text-white"
+        className="w-11/12 py-1 border-[1px] bg-[#80669d]  text-white rounded-md"
         onClick={() => {
           if (text === "" || url === "") {
             alert("please fill the details");
@@ -61,7 +60,7 @@ const CardEditModal = ({ toggleModal }) => {
           dispatch(hideEditModal());
           dispatch(removeEditItem());
         }}
-        className="w-11/12 py-1 border-[1px] bg-white text-black"
+        className="w-11/12 py-1 border-[1px] bg-white text-black rounded-md  hover:bg-[#ffbd03]"
       >
         Cancel
       </button>

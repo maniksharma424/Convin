@@ -5,62 +5,34 @@
       "name": "Educational"
     },
     {
-      "id": 2,
-      "name": "popular"
-    },
-    {
-      "name": "latest",
-      "id": 3
-    },
-    {
-      "name": "hvhvh",
-      "id": 4
-    },
-    {
-      "name": "refe",
-      "id": 5
-    },
-    {
-      "name": "efefe",
-      "id": 6
+      "name": "Songs",
+      "id": 2
     }
   ],
   "videos": [
     {
       "bucketId": 1,
-      "name": "rr",
-      "link": "rr",
-      "id": 1
+      "name": "nextjs",
+      "link": "https://www.youtube.com/watch?v=1WmNXEVia8I&t=332s",
+      "id": 8
+    },
+    {
+      "bucketId": 1,
+      "name": "React -course",
+      "link": "https://www.youtube.com/watch?v=cd3P3yXyx30&t=19629s",
+      "id": 9
     },
     {
       "bucketId": 2,
-      "name": "tt",
-      "link": "tt",
-      "id": 2
+      "name": "mark cuban",
+      "link": "https://www.youtube.com/watch?v=kbEOJLiIjUM",
+      "id": 10
     },
     {
-      "bucketId": 3,
-      "name": "gg",
-      "link": "gg",
-      "id": 3
-    },
-    {
-      "bucketId": 4,
-      "name": "ggbb",
-      "link": "gb",
-      "id": 4
-    },
-    {
-      "bucketId": 5,
-      "name": "gtb",
-      "link": "5tg",
-      "id": 5
-    },
-    {
-      "bucketId": 6,
-      "name": "54g",
-      "link": "5g",
-      "id": 6
+      "bucketId": 1,
+      "name": "Mongo Db",
+      "link": "https://www.youtube.com/watch?v=ofme2o29ngU",
+      "id": 11
     }
   ]
 }

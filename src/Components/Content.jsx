@@ -12,6 +12,8 @@ import { check, uncheck } from "../cardSlice";
 import MoveModal from "./MoveModal";
 import DeleteVideoModal from "./DeleteVideoModal";
 
+
+
 const Content = () => {
   const [bucketData, setBucketdata] = useState([]);
 
@@ -53,14 +55,14 @@ const Content = () => {
   }, [BucketId,ShowAddCardModal,showMoveVideoModal, showDeleteVideoModal, showEditModal,videosID, trick]);
 
   return (
-    <div className="content w-5/6 border-[1px] h-full sm:p-5">
+    <div className="content w-5/6 border-[1px] rounded-3xl h-full sm:p-5">
       <p className="text-[30px]">{bucketData.name}</p>
       <button
         onClick={() => {
 
          multipleSelect? dispatch(uncheck()): dispatch(check())
         }}
-        className="border-[1px] px-3"
+        className="sm:w-1/12 sm:py-1 border-[1px] mb-3 rounded-md bg-white hover:bg-[#ffbd03] hover:text-white shadow-md overflow-scroll"
       >
         Select
       </button>
@@ -71,11 +73,11 @@ const Content = () => {
             : null;
 
         }}
-        className="border-[1px] px-3"
+        className="sm:w-1/12 sm:py-1 border-[1px] mb-3 rounded-md bg-white hover:bg-[#ffbd03] hover:text-white mx-10 shadow-md"
       >
         Delete All
       </button>
-      <ul className="max-w-full h-full flex justify-start  items-start flex-wrap">
+      <ul  className="max-w-full h-full flex justify-start  items-start flex-wrap">
         {bucketData?.map((item) => (
           <ItemCard
             key={item.id}

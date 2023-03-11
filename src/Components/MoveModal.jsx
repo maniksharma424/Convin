@@ -23,24 +23,26 @@ const videoTobeMovedData = useSelector(store=>store?.bucket?.toMoveVideoData)
     const dispatch = useDispatch()
     
       return (
-        <div className="bucketModal bg-white w-1/3 h-fit border-[1px] absolute top-[200px] left-[400px] sm:p-4 flex flex-col justify-around ">
-          <p>Move to</p>
+        <div className="bucketModal bg-gray-50 rounded-xl w-1/3 h-fit border-[1px] absolute top-[200px] left-[400px] sm:p-4 flex flex-col justify-around ">
+          <div className='w-11/12 flex justify-center'><p className='text-[25px] font-[400]'>Move to</p></div>
+          <button
+            onClick={() => {
+                dispatch(hideMoveModal())
+            }}
+            className="w-[30px]  border-[1px]  relative left-[400px] bottom-[40px] rounded-md bg-black text-white"
+          >
+            x
+          </button>
+          
           
             {buckets.map(item=><button key={item?.id} onClick={()=>{
                 dispatch(hideMoveModal())
                 moveVideo(videoTobeMovedData,item?.id)
                 
             
-            }} className="w-11/12 py-1 border-[1px] bg-white text-black my-2">{item?.name}</button>)}
+            }} className="w-11/12 py-1 border-[1px] bg-white ml-3 text-black my-2 rounded-md hover:bg-[#80669d] hover:text-white ">{item?.name}</button>)}
 
-          <button
-            onClick={() => {
-                dispatch(hideMoveModal())
-            }}
-            className="w-11/12 py-1 border-[1px]  bg-white text-black"
-          >
-            Cancel
-          </button>
+          
         </div>
       );
 }

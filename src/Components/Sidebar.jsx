@@ -10,9 +10,9 @@ import BucketModal from "./BucketModal";
 const Sidebar = () => {
   const [buckets, setBuckets] = useState([]);
 
-const showBucketModal= useSelector(store=>store?.modal?.showBucketModal)
+  const showBucketModal = useSelector((store) => store?.modal?.showBucketModal);
 
-const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const getData = async () => {
@@ -24,26 +24,26 @@ const dispatch = useDispatch()
     getData();
   }, [showBucketModal]);
 
-  
   return (
-    <div className="w-1/6 border-[1px] h-full flex flex-col justify-start items-center">
-      <p>Buckets</p>
+    <div className="w-1/6 border-[1px] pb-[190px] h-fit flex flex-col justify-evenly items-center py-5 overflow-scroll rounded-3xl ">
+      <p className="text-[20px] mb-4 font-[700]">Buckets</p>
       {buckets.map((bucket) => (
+        // className={"sm:w-11/12 sm:py-1 border-[1px] mb-3 rounded-md" }
+
         <button
           onClick={() => {
-            dispatch(setItem(bucket?.id))
+            dispatch(setItem(bucket?.id));
           }}
           key={bucket.id}
-          className={"sm:w-11/12 sm:py-1 border-[1px]" }
-        >
-          {bucket.name}
-        </button>
+          className="sm:w-11/12 sm:py-1 border-[1px] mb-3 rounded-md bg-white hover:bg-[#ffbd03] hover:text-white"
+          >
+          {bucket.name}</button>
       ))}
       <button
         onClick={() => {
-          dispatch(show())
+          dispatch(show());
         }}
-        className="sm:px-10 sm:py-1 border-[1px]"
+        className="sm:w-11/12 sm:py-1 border-[1px] mb-3 rounded-md bg-white hover:bg-[#80669d] hover:text-white"
       >
         +
       </button>
