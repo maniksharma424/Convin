@@ -8,10 +8,10 @@ server.use(middlewares)
 // Add this before server.use(router)
 server.use(jsonServer.rewriter({
     '/api/*': '/$1',
-    // '/buckets/:1/vidoes/:1': '/buckets/:i/'
+    '/buckets/:1/vidoes/:1': '/buckets/:i/'
 })) 
 server.use(router)
-server.listen(5000, () => {
+server.listen(8000, () => {
     console.log('JSON Server is running')
 })
 

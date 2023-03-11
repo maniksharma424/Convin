@@ -7,7 +7,7 @@ import { removeEditItem } from "../videoSlice";
 
 import { motion } from "framer-motion";
 
-const CardEditModal = ({ toggleModal }) => {
+const CardEditModal = () => {
   const [text, setText] = useState("");
 
   const [url, setUrl] = useState("");

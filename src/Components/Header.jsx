@@ -19,14 +19,14 @@ const Header = () => {
       <motion.div className=" w-1/2  flex justify-end items-center sm:text-[20px] text-[10px]  font-[200]  ">
         <Link to="/">
           <li
-            className="list-none hover:text-[#ffbd03]
+            className="list-none hover:text-[#80669d]
              w-1/2"
           >
             Home
           </li>
         </Link>
         <Link to="/history">
-          <li className="list-none mx-[50px] sm:mx-[100px] w-1/2 hover:text-[#ffbd03]">
+          <li className="list-none mx-[50px] sm:mx-[100px] w-1/2 hover:text-[#80669d]">
             History
           </li>
         </Link>

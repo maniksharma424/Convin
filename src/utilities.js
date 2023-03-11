@@ -2,7 +2,7 @@ export const addBucket = async (name) => {
   let newBucket = {
     name: name,
   };
-  await fetch("http://localhost:5000/buckets", {
+  await fetch("http://localhost:8000/buckets", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -19,7 +19,7 @@ export const addVideo = async (name, url, bucketId) => {
     link: url,
   };
 
-  await fetch("http://localhost:5000/videos", {
+  await fetch("http://localhost:8000/videos", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -32,7 +32,7 @@ export const addVideo = async (name, url, bucketId) => {
 export const deleteMultipleVideos = async (videoIds) => {
   // find a better approach
   await videoIds.map((id) => {
-    fetch(`http://localhost:5000/videos/${id}`, {
+    fetch(`http://localhost:8000/videos/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -43,7 +43,7 @@ export const deleteMultipleVideos = async (videoIds) => {
   return true;
 };
 export const deleteVideo = async (id) => {
-  await fetch(`http://localhost:5000/videos/${id}`, {
+  await fetch(`http://localhost:8000/videos/${id}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
@@ -59,7 +59,7 @@ export const editVideo = async (id, name, link, bucketId) => {
     link: link,
   };
 
-  await fetch(`http://localhost:5000/videos/${id}`, {
+  await fetch(`http://localhost:8000/videos/${id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -80,7 +80,7 @@ export const moveVideo = async (videoData, bucketId) => {
     link: videoData[0]?.link,
   };
 
-  await fetch(`http://localhost:5000/videos/${videoData[0]?.id}`, {
+  await fetch(`http://localhost:8000/videos/${videoData[0]?.id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
