@@ -11,7 +11,7 @@ export const addBucket = async (name) => {
     body: JSON.stringify(newBucket),
   });
 };
-export const AddVideo = async (name, url, bucketId) => {
+export const addVideo = async (name, url, bucketId) => {
   console.log(bucketId);
   let newCard = {
     bucketId: bucketId,

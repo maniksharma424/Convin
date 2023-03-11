@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { hideAddCardModal } from "../modalSlice";
-import { AddVideo } from "../utilities";
+import { addVideo } from "../utilities";
 import { motion } from "framer-motion";
 import { useRef } from "react";
 
@@ -47,7 +47,7 @@ const CardModal = ({ bucketId }) => {
         onClick={() => {
           text === "" || url === ""
             ? alert("please fill the details")
-            : AddVideo(text, url, bucketId) & dispatch(hideAddCardModal());
+            : addVideo(text, url, bucketId) & dispatch(hideAddCardModal());
         }}
       >
         Done

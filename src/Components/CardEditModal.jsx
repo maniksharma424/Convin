@@ -1,5 +1,5 @@
 import React from "react";
-import { useState,useRef,useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { hideEditModal } from "../modalSlice";
 import { editVideo } from "../utilities";
@@ -8,7 +8,6 @@ import { removeEditItem } from "../videoSlice";
 import { motion } from "framer-motion";
 
 const CardEditModal = ({ toggleModal }) => {
-
   const [text, setText] = useState("");
 
   const [url, setUrl] = useState("");
@@ -21,22 +20,23 @@ const CardEditModal = ({ toggleModal }) => {
 
   const bucketId = I_D_S[1];
 
-  const inputRef = useRef(null)
+  const inputRef = useRef(null);
 
-  useEffect(()=>{
-    inputRef.current.focus()
-  })
-  
+  useEffect(() => {
+    inputRef.current.focus();
+  });
+
   return (
     <motion.div
-    initial={{ y: "50%", opacity: 0, scale: 0.5 }}
+      initial={{ y: "50%", opacity: 0, scale: 0.5 }}
       animate={{ y: 0, opacity: 1, scale: 1 }}
-    
-    
-    className="Card-modal bg-gray-50 w-2/3 sm:w-1/3 h-1/3 border-[1px] absolute top-[200px] left-[100px] sm:left-[400px] sm:p-4 flex flex-col justify-evenly rounded-xl px-3 ">
-      <div className='w-11/12 flex justify-center'><p className='text-[25px] font-[400]'>Edit Video</p></div>
+      className="Card-modal bg-gray-50 w-2/3 sm:w-1/3 h-1/3 border-[1px] absolute top-[200px] left-[100px] sm:left-[400px] sm:p-4 flex flex-col justify-evenly rounded-xl px-3 "
+    >
+      <div className="w-11/12 flex justify-center">
+        <p className="text-[25px] font-[400]">Edit Video</p>
+      </div>
       <input
-      ref={inputRef}
+        ref={inputRef}
         value={text}
         placeholder="Edit Name.."
         onChange={(e) => {

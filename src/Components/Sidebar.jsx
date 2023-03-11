@@ -38,7 +38,7 @@ const Sidebar = () => {
             dispatch(setItem(bucket?.id));
           }}
           key={bucket.id}
-          className="w-11/12 sm:py-1 border-[1px] sm:mb-3 mb-2 rounded-md bg-white hover:bg-[#ffbd03] hover:text-white sm:text-[16px] text-[7px]"
+          className="w-11/12 sm:py-1 border-[1px] sm:mb-3 mb-2 rounded-md bg-white hover:bg-[#9c4f99] hover:text-white sm:text-[16px] text-[7px]"
           >
           {bucket.name}</motion.button>
       ))}
