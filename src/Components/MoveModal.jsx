@@ -31,7 +31,7 @@ setTimeout(function() {
     dispatch(hideMoveModal());
     statementExecuted = true;
   }
-}, 1000);
+}, 600);
 
   }
 

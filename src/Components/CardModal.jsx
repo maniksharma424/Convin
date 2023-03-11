@@ -23,7 +23,7 @@ const CardModal = ({ bucketId }) => {
         dispatch(hideAddCardModal());
         statementExecuted = true;
       }
-    }, 1000);
+    }, 600);
   };
   return (
     <motion.div

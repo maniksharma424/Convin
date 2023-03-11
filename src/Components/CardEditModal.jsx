@@ -34,7 +34,7 @@ const CardEditModal = () => {
         dispatch(hideEditModal());
         statementExecuted = true;
       }
-    }, 1500);
+    }, 600);
   };
 
   return (

@@ -22,7 +22,7 @@ setTimeout(function() {
     dispatch(hide());
     statementExecuted = true;
   }
-}, 1000);
+}, 600);
 
   }
 

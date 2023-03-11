@@ -16,7 +16,7 @@ const DeleteVideoModal = () => {
         dispatch(hideDeleteModal());
         statementExecuted = true;
       }
-    }, 1000);
+    }, 600);
   };
 
   return (
