@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 const Header = () => {
 
   
@@ -8,7 +8,7 @@ const Header = () => {
         <div className="logo w-1/2 flex justify-end">LinkStash</div>
         <div className=' w-1/2 flex justify-evenly'>
             <li>Home</li>
-            <li>History</li>
+            <Link to="/history"><li>History</li></Link>
         </div>
 
     </div>

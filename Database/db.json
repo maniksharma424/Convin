@@ -17,18 +17,5 @@
       "id": 4
     }
   ],
-  "videos": [
-    {
-      "bucketId": 2,
-      "name": "anilk",
-      "link": "https://www.youtube.com/watch?v=W31LlujrB08&list=RDMM&start_radio=1&rv=erlNvo9dTYc",
-      "id": 12
-    },
-    {
-      "bucketId": 1,
-      "name": "nickleback",
-      "link": "https://www.youtube.com/watch?v=Aiay8I5IPB8",
-      "id": 14
-    }
-  ]
+  "videos": []
 }

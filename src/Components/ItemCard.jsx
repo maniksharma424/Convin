@@ -49,7 +49,10 @@ const ItemCard = ({item,update}) => {
         >
           Edit
         </button>
-        <button onClick={()=>{dispatch(showPlayVideoModal())}} className="border-[1px] px-3">Play</button>
+        <button onClick={()=>{
+          dispatch(showPlayVideoModal())
+          
+        }} className="border-[1px] px-3">Play</button>
       </div>
       {playVideo && createPortal(<VideoModal src={VIDEO_URL}/>,document.body)}
     </>
