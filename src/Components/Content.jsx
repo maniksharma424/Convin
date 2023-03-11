@@ -40,11 +40,11 @@ const Content = () => {
 
   useEffect(() => {
     const getBucketData = async () => {
-      const json = await fetch(`http://localhost:8000/videos`).then((res) =>
+      const json = await fetch(`https://mock-server-manik.onrender.com/videos`).then((res) =>
         res.json()
       );
 
-      const videoData = json.filter((video) => video.bucketId === BucketId[0]);
+      const videoData = await json.filter((video) => video.bucketId === BucketId[0]);
 
       setBucketdata(videoData);
     };
@@ -61,7 +61,7 @@ const Content = () => {
 
   useEffect(() => {
     const getBucketname = async () => {
-      const json = await fetch(`http://localhost:8000/buckets/${BucketId}`)
+      const json = await fetch(`https://mock-server-manik.onrender.com/buckets/${BucketId}`)
         .then((res) => res.json())
         .then((res) => setBucketName(res.name));
     };

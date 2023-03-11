@@ -17,7 +17,7 @@ const Sidebar = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const json = await fetch("http://localhost:8000/buckets").then((res) =>
+      const json = await fetch("https://mock-server-manik.onrender.com/buckets").then((res) =>
         res.json()
       );
       setBuckets(json);

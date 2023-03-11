@@ -13,7 +13,18 @@ const CardModal = ({ bucketId }) => {
 
   useEffect(() => {
     inputRef.current.focus();
-  },[]);
+  }, []);
+
+  const update = () => {
+    let statementExecuted = false;
+
+    setTimeout(function () {
+      if (!statementExecuted) {
+        dispatch(hideAddCardModal());
+        statementExecuted = true;
+      }
+    }, 1000);
+  };
   return (
     <motion.div
       initial={{ y: "50%", opacity: 0, scale: 0.5 }}
@@ -47,7 +58,7 @@ const CardModal = ({ bucketId }) => {
         onClick={() => {
           text === "" || url === ""
             ? alert("please fill the details")
-            : addVideo(text, url, bucketId) & dispatch(hideAddCardModal());
+            : addVideo(text, url, bucketId) & update();
         }}
       >
         Done

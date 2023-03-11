@@ -14,6 +14,18 @@ const BucketModal = () => {
     inputRef.current.focus();
   },[]);
 
+  const update = ()=>{
+    let statementExecuted = false;
+
+setTimeout(function() {
+  if (!statementExecuted) {
+    dispatch(hide());
+    statementExecuted = true;
+  }
+}, 1000);
+
+  }
+
   return (
     <motion.div
       initial={{ y: "50%", opacity: 0, scale: 0.5 }}
@@ -38,10 +50,10 @@ const BucketModal = () => {
         onClick={() => {
           text === ""
             ? alert("please give a name")
-            : addBucket(text) & dispatch(hide());
+            : addBucket(text) & update()
         }}
       >
-        Done
+        Create
       </button>
       <button
         onClick={() => {
