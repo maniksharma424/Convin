@@ -1,14 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { hide } from "../modalSlice";
 import { addBucket } from "../utilities";
 import { motion } from "framer-motion";
+import { useRef } from "react";
 
 const BucketModal = () => {
 
 const [text, setText] = useState("");
-
+const inputRef = useRef(null)
 const dispatch = useDispatch()
+
+useEffect(()=>{
+  inputRef.current.focus()
+})
 
   return (
     <motion.div
@@ -17,6 +22,7 @@ const dispatch = useDispatch()
      className="bucketModal bg-white sm:w-1/3 w-2/3 h-2/5 border-[1px] absolute top-[200px] sm:left-[400px] left-[100px]  px-3 sm:p-4 flex flex-col justify-evenly rounded-2xl shadow-2xl">
       <div className='w-11/12 flex justify-center'><p className='text-[25px] font-[400]'>Create Bucket</p></div>
       <input
+      ref={inputRef}
         value={text}
         placeholder="Name.."
         onChange={(e) => {

@@ -47,7 +47,7 @@ const Sidebar = () => {
         onClick={() => {
           dispatch(show());
         }}
-        className="w-11/12 sm:py-1 border-[1px] mb-3 rounded-md bg-white hover:bg-[#80669d] hover:text-white"
+        className="w-11/12 sm:py-1 border-[1px] mb-3 rounded-md bg-[#80669d] hover:opacity-100 text-white opacity-80 "
       >
         +
       </motion.button>

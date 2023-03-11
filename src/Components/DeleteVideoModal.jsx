@@ -8,6 +8,9 @@ import {  motion } from "framer-motion";
 const DeleteVideoModal = () => {
   const dispatch = useDispatch();
   const deleteVideoId = useSelector((store) => store?.videos?.deleteVideoId);
+
+
+  
   return (
     <motion.div
       initial={{ y: "50%", opacity: 0, scale: 0.5 }}

@@ -75,7 +75,7 @@ const ItemCard = ({ item }) => {
               dispatch(setDeleteVideoId(item?.id));
               dispatch(showDeleteModal());
             }}
-            className="border-[1px] sm:px-4 sm:text-[15px] text-[6px] bg-white font-[100] rounded-md shadow-lg hover:bg-[#88669d] hover:text-white"
+            className="border-[1px] sm:px-4 sm:text-[15px] text-[6px] bg-white font-[100] rounded-md shadow-lg hover:bg-[#ffbd03] hover:text-white"
           >
             Delete
           </motion.button>

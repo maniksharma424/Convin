@@ -64,14 +64,17 @@ const Content = () => {
     initial={{ y: "50%", opacity: 0, scale: 0.5 }}
     animate={{ y: 0, opacity: 1, scale: 1 }}
     className="content w-5/6 border-[1px] rounded-3xl h-full sm:p-5 overflow-scroll">
- <p className="sm:text-[30px] text-[20px] sm:mb-5 m-5">{bucketName}</p>
+      <div className="w-full flex justify-center">
+
+ <p className="sm:text-[40px] text-[20px] sm:mb-5 m-5">{bucketName}</p>
+      </div>
       <motion.button
       whileHover={{scale:1.1}}
         onClick={() => {
 
          multipleSelect? dispatch(uncheck()): dispatch(check())
         }}
-        className="sm:w-1/12 sm:py-1 border-[1px] sm:mb-3 rounded-md bg-white hover:bg-[#ffbd03] hover:text-white shadow-md overflow-scroll sm:text-[16px] text-[8px] sm:ml-0 ml-5"
+        className="sm:w-1/12 sm:py-1 border-[1px] sm:mb-3 rounded-md bg-white hover:bg-[#80669d] hover:text-white shadow-md overflow-scroll sm:text-[16px] text-[8px] sm:ml-0 ml-5"
       >
         Select
       </motion.button>

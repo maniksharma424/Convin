@@ -11,14 +11,30 @@
     {
       "name": "Latest songs",
       "id": 3
+    },
+    {
+      "name": "movies",
+      "id": 4
     }
   ],
   "videos": [
     {
+      "bucketId": 3,
+      "name": "next.js",
+      "link": "https://www.youtube.com/watch?v=hkhskSrT5SY",
+      "id": 1
+    },
+    {
+      "bucketId": 4,
+      "name": "DDLJ",
+      "link": "https://www.youtube.com/watch?v=hkhskSrT5SY",
+      "id": 2
+    },
+    {
       "bucketId": 1,
       "name": "nextjs",
-      "link": "https://www.youtube.com/watch?v=1WmNXEVia8I&t=332s",
-      "id": 8
+      "link": "https://www.youtube.com/watch?v=t1nFAMws5FI",
+      "id": 3
     }
   ]
 }
