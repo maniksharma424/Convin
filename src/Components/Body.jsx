@@ -1,12 +1,8 @@
 import React from "react";
 import Content from "./Content";
 import Sidebar from "./Sidebar";
-import { useState } from "react";
 
 const Body = () => {
-  
-
-
   return (
     <div className="max-w-full h-[765px] flex">
       <Sidebar />

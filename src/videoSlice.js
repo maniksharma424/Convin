@@ -4,7 +4,8 @@ const videoSlice =createSlice({
     name:"videos",
     initialState:{
         items:[],
-        editItems:[]
+        editItems:[],
+        deleteVideoId:0
     },
     reducers:{
         addItem:(state,action)=>{
@@ -21,10 +22,13 @@ const videoSlice =createSlice({
         },
         removeEditItem:(state,action)=>{
             state.editItems = []
+        },
+        setDeleteVideoId:(state,action)=>{
+            state.deleteVideoId = action.payload
         }
     }
 })
 
 
-export const { addItem, removeItem,clearItems,addEditItem,removeEditItem } = videoSlice.actions;
+export const { addItem, removeItem,clearItems,addEditItem,removeEditItem,setDeleteVideoId } = videoSlice.actions;
 export default videoSlice.reducer

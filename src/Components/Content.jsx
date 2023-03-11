@@ -9,6 +9,8 @@ import { deleteMultipleVideos } from "../utilities";
 import { clearItems } from "../videoSlice";
 import CardEditModal from "./CardEditModal";
 import { check, uncheck } from "../cardSlice";
+import MoveModal from "./MoveModal";
+import DeleteVideoModal from "./DeleteVideoModal";
 
 const Content = () => {
   const [bucketData, setBucketdata] = useState([]);
@@ -25,6 +27,11 @@ const Content = () => {
   const videosID = useSelector((store) => store?.videos?.items);
 
   const multipleSelect = useSelector(store=>store?.card?.checkbox)
+
+  const showMoveVideoModal = useSelector(store=>store?.modal.moveModal)
+  
+  const showDeleteVideoModal = useSelector(store=>store?.modal?.deleteModal)
+  
 
   const dispatch = useDispatch();
 
@@ -43,7 +50,7 @@ const Content = () => {
       setBucketdata(videoData);
     };
     getData();
-  }, [BucketId,ShowAddCardModal,  showEditModal,videosID, trick]);
+  }, [BucketId,ShowAddCardModal,showMoveVideoModal, showDeleteVideoModal, showEditModal,videosID, trick]);
 
   return (
     <div className="content w-5/6 border-[1px] h-full sm:p-5">
@@ -94,6 +101,9 @@ const Content = () => {
           <CardEditModal />,
           document.body
         )}
+
+        {showMoveVideoModal && createPortal(<MoveModal/>,document.body)}
+        {showDeleteVideoModal && createPortal(<DeleteVideoModal/>,document.body)}
     </div>
   );
 };

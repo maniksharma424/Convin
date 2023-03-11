@@ -10,10 +10,9 @@ import BucketModal from "./BucketModal";
 const Sidebar = () => {
   const [buckets, setBuckets] = useState([]);
 
-const {showBucketModal} = useSelector(store=>store?.modal)
+const showBucketModal= useSelector(store=>store?.modal?.showBucketModal)
 
 const dispatch = useDispatch()
-
 
   useEffect(() => {
     const getData = async () => {
@@ -35,7 +34,7 @@ const dispatch = useDispatch()
             dispatch(setItem(bucket?.id))
           }}
           key={bucket.id}
-          className="sm:w-11/12 sm:py-1 border-[1px]"
+          className={"sm:w-11/12 sm:py-1 border-[1px]" }
         >
           {bucket.name}
         </button>

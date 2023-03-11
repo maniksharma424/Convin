@@ -6,7 +6,9 @@ const modalSlice =createSlice({
         showBucketModal:false,
         showAddCardModal:false,
         showEditModal:false,
-        playVideoMOdal:false
+        playVideoMOdal:false,
+        moveModal:false,
+        deleteModal:false
     },
     reducers:{
         show:(state,action)=>{
@@ -32,11 +34,23 @@ const modalSlice =createSlice({
         },
         hidePlayVideoModal:(state)=>{
             state.playVideoMOdal = false
+        },
+        showMoveModal:(state)=>{
+            state.moveModal = true
+        },
+        hideMoveModal:(state)=>{
+            state.moveModal = false
+        },
+        showDeleteModal:(state)=>{
+            state.deleteModal = true
+        },
+        hideDeleteModal:(state)=>{
+            state.deleteModal = false
         }
 
     }
 })
 
 
-export const { show,hide,ShowAddCardModal,hideAddCardModal,showEditModal,hideEditModal,showPlayVideoModal,hidePlayVideoModal } = modalSlice.actions;
+export const { show,hide,ShowAddCardModal,hideAddCardModal,showEditModal,hideEditModal,showPlayVideoModal,hidePlayVideoModal,showMoveModal,hideMoveModal,showDeleteModal,hideDeleteModal } = modalSlice.actions;
 export default modalSlice.reducer

@@ -15,7 +15,52 @@
     {
       "name": "hvhvh",
       "id": 4
+    },
+    {
+      "name": "refe",
+      "id": 5
+    },
+    {
+      "name": "efefe",
+      "id": 6
     }
   ],
-  "videos": []
+  "videos": [
+    {
+      "bucketId": 1,
+      "name": "rr",
+      "link": "rr",
+      "id": 1
+    },
+    {
+      "bucketId": 2,
+      "name": "tt",
+      "link": "tt",
+      "id": 2
+    },
+    {
+      "bucketId": 3,
+      "name": "gg",
+      "link": "gg",
+      "id": 3
+    },
+    {
+      "bucketId": 4,
+      "name": "ggbb",
+      "link": "gb",
+      "id": 4
+    },
+    {
+      "bucketId": 5,
+      "name": "gtb",
+      "link": "5tg",
+      "id": 5
+    },
+    {
+      "bucketId": 6,
+      "name": "54g",
+      "link": "5g",
+      "id": 6
+    }
+  ]
 }

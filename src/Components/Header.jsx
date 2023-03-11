@@ -7,7 +7,7 @@ const Header = () => {
     <div className='header max-w-full flex sm:py-3 border-[1px]'>
         <div className="logo w-1/2 flex justify-end">LinkStash</div>
         <div className=' w-1/2 flex justify-evenly'>
-            <li>Home</li>
+            <Link to="/"><li>Home</li></Link>
             <Link to="/history"><li>History</li></Link>
         </div>
 
