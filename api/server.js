@@ -7,8 +7,8 @@ const middlewares = jsonServer.defaults()
 server.use(middlewares)
 // Add this before server.use(router)
 server.use(jsonServer.rewriter({
-    '/buckets/*': '/$1',
-    '/buckets/:1/vidoes/:1': '/buckets/:id'
+    '/api/*': '/$1',
+    // '/buckets/:1/vidoes/:1': '/buckets/:i/'
 })) 
 server.use(router)
 server.listen(5000, () => {
