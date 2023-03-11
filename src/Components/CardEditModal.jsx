@@ -24,7 +24,18 @@ const CardEditModal = () => {
 
   useEffect(() => {
     inputRef.current.focus();
-  },[]);
+  }, []);
+
+  const update = () => {
+    let statementExecuted = false;
+
+    setTimeout(function () {
+      if (!statementExecuted) {
+        dispatch(hideEditModal());
+        statementExecuted = true;
+      }
+    }, 1500);
+  };
 
   return (
     <motion.div
@@ -61,8 +72,8 @@ const CardEditModal = () => {
             alert("please fill the details");
           } else {
             editVideo(id, text, url, bucketId);
-            dispatch(hideEditModal());
             dispatch(removeEditItem());
+            update();
           }
         }}
       >
@@ -70,8 +81,8 @@ const CardEditModal = () => {
       </button>
       <button
         onClick={() => {
-          dispatch(hideEditModal());
           dispatch(removeEditItem());
+          update();
         }}
         className="w-11/12 py-1 border-[1px] bg-white text-black rounded-md  hover:bg-[#ffbd03]"
       >

@@ -23,6 +23,18 @@ const MoveModal = () => {
   );
   const dispatch = useDispatch();
 
+  const update = ()=>{
+    let statementExecuted = false;
+
+setTimeout(function() {
+  if (!statementExecuted) {
+    dispatch(hideMoveModal());
+    statementExecuted = true;
+  }
+}, 1000);
+
+  }
+
   return (
     <motion.div
       initial={{ y: "50%", opacity: 0, scale: 0.5 }}
@@ -34,7 +46,7 @@ const MoveModal = () => {
       </div>
       <button
         onClick={() => {
-          dispatch(hideMoveModal());
+          update()
         }}
         className="w-[30px]  border-[1px]  relative left-[195px] sm:left-[400px] sm:bottom-[40px] bottom-8 rounded-md bg-black text-white"
       >
@@ -45,8 +57,8 @@ const MoveModal = () => {
         <button
           key={item?.id}
           onClick={() => {
-            dispatch(hideMoveModal());
             moveVideo(videoTobeMovedData, item?.id);
+            update()
           }}
           className="w-11/12 py-1 border-[1px] bg-white ml-3 text-black my-2 rounded-md hover:bg-[#80669d] hover:text-white "
         >

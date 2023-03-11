@@ -8,6 +8,17 @@ const DeleteVideoModal = () => {
   const dispatch = useDispatch();
   const deleteVideoId = useSelector((store) => store?.videos?.deleteVideoId);
 
+  let statementExecuted = false;
+
+  const update = () => {
+    setTimeout(function () {
+      if (!statementExecuted) {
+        dispatch(hideDeleteModal());
+        statementExecuted = true;
+      }
+    }, 1000);
+  };
+
   return (
     <motion.div
       initial={{ y: "50%", opacity: 0, scale: 0.5 }}
@@ -22,7 +33,7 @@ const DeleteVideoModal = () => {
       <button
         onClick={() => {
           deleteVideo(deleteVideoId);
-          dispatch(hideDeleteModal());
+          update();
         }}
         className="w-11/12 py-1 border-[1px]    rounded-md bg-[#80669d] text-white "
       >
@@ -30,7 +41,7 @@ const DeleteVideoModal = () => {
       </button>
       <button
         onClick={() => {
-          dispatch(hideDeleteModal());
+          update();
         }}
         className="w-11/12 py-1 border-[1px]  bg-white text-black rounded-md hover:bg-[#ffbd03]"
       >

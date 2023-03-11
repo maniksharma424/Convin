@@ -40,11 +40,13 @@ const Content = () => {
 
   useEffect(() => {
     const getBucketData = async () => {
-      const json = await fetch(`https://mock-server-manik.onrender.com/videos`).then((res) =>
-        res.json()
-      );
+      const json = await fetch(
+        `https://mock-server-manik.onrender.com/videos`
+      ).then((res) => res.json());
 
-      const videoData = await json.filter((video) => video.bucketId === BucketId[0]);
+      const videoData = await json.filter(
+        (video) => video.bucketId === BucketId[0]
+      );
 
       setBucketdata(videoData);
     };
@@ -61,13 +63,24 @@ const Content = () => {
 
   useEffect(() => {
     const getBucketname = async () => {
-      const json = await fetch(`https://mock-server-manik.onrender.com/buckets/${BucketId}`)
+      const json = await fetch(
+        `https://mock-server-manik.onrender.com/buckets/${BucketId}`
+      )
         .then((res) => res.json())
         .then((res) => setBucketName(res.name));
     };
     getBucketname();
   });
+  const update = () => {
+    let statementExecuted = false;
 
+    setTimeout(function () {
+      if (!statementExecuted) {
+        dispatch(clearItems())
+        statementExecuted = true;
+      }
+    }, 1500);
+  };
   return (
     <motion.div
       initial={{ y: "50%", opacity: 0, scale: 0.5 }}
@@ -80,7 +93,7 @@ const Content = () => {
       <motion.button
         whileHover={{ scale: 1.1 }}
         onClick={() => {
-          multipleSelect ? dispatch(uncheck()) : dispatch(check());
+          multipleSelect ? dispatch(uncheck()) : dispatch(check())
         }}
         className="sm:w-1/12 sm:py-1 border-[1px] sm:mb-3 rounded-md bg-white hover:bg-[#80669d] hover:text-white shadow-md overflow-scroll sm:text-[16px] text-[8px] sm:ml-0 ml-5"
       >
@@ -90,7 +103,7 @@ const Content = () => {
         whileHover={{ scale: 1.1 }}
         onClick={() => {
           videosID.length > 0
-            ? deleteMultipleVideos(videosID) && dispatch(clearItems())
+            ? deleteMultipleVideos(videosID) && update()
             : null;
         }}
         className="sm:w-1/12 sm:py-1 border-[1px] sm:mb-3 rounded-md bg-white hover:bg-[#b3374c] hover:text-white mx-10 shadow-md sm:text-[16px] text-[8px]"
