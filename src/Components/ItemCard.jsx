@@ -30,7 +30,6 @@ const ItemCard = ({ item }) => {
   const startIndex = item?.link.indexOf("v=") + 2;
   let VIDEO_URL = item?.link.substr(startIndex, 11);
   VIDEO_URL = `${VIDEO_URL}?autoplay=1`;
-  console.log(VIDEO_URL);
   return (
     <>
       {checkbox ? (
