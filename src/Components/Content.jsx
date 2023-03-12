@@ -12,6 +12,8 @@ import { check, uncheck } from "../cardSlice";
 import MoveModal from "./MoveModal";
 import DeleteVideoModal from "./DeleteVideoModal";
 import { motion } from "framer-motion";
+import ShimmerCard from "./ShimmerCard";
+
 
 const Content = () => {
   const [bucketData, setBucketdata] = useState([]);
@@ -81,7 +83,8 @@ const Content = () => {
       }
     }, 1500);
   };
-  return (
+  if(bucketData.length === 0) return <ShimmerCard/>
+  else return (
     <motion.div
       initial={{ y: "50%", opacity: 0, scale: 0.5 }}
       animate={{ y: 0, opacity: 1, scale: 1 }}
